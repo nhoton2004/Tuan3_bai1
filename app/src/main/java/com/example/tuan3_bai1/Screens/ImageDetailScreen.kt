@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.tuan3_bai1.R
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -64,7 +66,7 @@ fun ImageDetailScreen(navController: NavController) {
                 ) {
                     Column {
                         AsyncImage(
-                            model = "https://giaothongvantaihcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png",
+                            model = R.drawable.anh_uth,
                             contentDescription = "UTH Building",
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -89,21 +91,13 @@ fun ImageDetailScreen(navController: NavController) {
                     elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
                 ) {
                     Column {
-                        // Placeholder cho campus image
-                        Box(
+                        AsyncImage(
+                            model = R.drawable.anh1_uth,
+                            contentDescription = "UTH Building",
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(200.dp)
-                                .background(Color(0xFFE0E0E0)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.School,
-                                contentDescription = "Campus",
-                                modifier = Modifier.size(64.dp),
-                                tint = Color.Gray
-                            )
-                        }
+                                .height(200.dp),
+                            contentScale = ContentScale.Crop)
                         Text(
                             text = "In app",
                             fontSize = 14.sp,
